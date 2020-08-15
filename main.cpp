@@ -47,11 +47,11 @@
 #define CE      PTD5    //D9
 #define IRQ     PTA13   //D8
 
-DigitalOut red(LED_RED); 
-DigitalOut blue(LED_BLUE); 
+// DigitalOut red(LED_RED); 
+// DigitalOut blue(LED_BLUE); 
 
-nRF24L01P my_nrf24l01p(MOSI, MISO, SCK, CS, CE, IRQ); // module instance - FRDM KL25Z
-// nRF24L01P my_nrf24l01p(D11, D12, D4, D10, D9, D8); // module instance (Arduino pinout - compatible to other boards)
+// nRF24L01P my_nrf24l01p(MOSI, MISO, SCK, CS, CE, IRQ); // module instance - FRDM KL25Z
+nRF24L01P my_nrf24l01p(D11, D12, D13, D10, D9, D8); // module instance (Arduino pinout - compatible to other boards)
 
 /* Objeto Serial */
 static BufferedSerial pc(USBTX, USBRX, 9600); 
@@ -99,7 +99,7 @@ int main() {
             }
 
             // Toggle LED1 (to help debug Host -> nRF24L01+ communication)
-            red = !red;
+            // red = !red;
         }
 
         // If we've received anything in the nRF24L01+...
@@ -114,7 +114,7 @@ int main() {
             }
 
             // Toggle LED2 (to help debug nRF24L01+ -> Host communication)
-            blue = !blue;
+            // blue = !blue;
         }
 
     }
