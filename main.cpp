@@ -11,7 +11,22 @@
  * @copyright mbed Microcontroller Library
  * Copyright (c) 2019 ARM Limited
  * SPDX-License-Identifier: Apache-2.0
- * 
+ *
+ * @copyright (c) 2010 Owen Edwards
+ *
+ *    This program is free software: you can redistribute it and/or modify
+ *    it under the terms of the GNU General Public License as published by
+ *    the Free Software Foundation, either version 3 of the License, or
+ *    (at your option) any later version.
+ *
+ *    This program is distributed in the hope that it will be useful,
+ *    but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ *    GNU General Public License for more details.
+ *
+ *    You should have received a copy of the GNU General Public License
+ *    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ *
  * @copydoc main.cpp https://os.mbed.com/users/Owen/code/nRF24L01P_Hello_World/
  * @copydoc nRF24L01P.cpp
  */
@@ -27,16 +42,16 @@
 /*** Pins definitions***/
 #define MOSI    PTD2    //D11
 #define MISO    PTD3    //D12
-#define SCK     PTC5    //pta4 - D4
+#define SCK     PTC5    
 #define CS      PTD0    //D10
 #define CE      PTD5    //D9
 #define IRQ     PTA13   //D8
 
 DigitalOut red(LED_RED); 
-// DigitalOut blue(LED_BLUE); 
+DigitalOut blue(LED_BLUE); 
 
-// nRF24L01P my_nrf24l01p(MOSI, MISO, SCK, CS, CE, IRQ); // module instance - FRDM KL25Z
-nRF24L01P my_nrf24l01p(D11, D12, D4, D10, D9, D8); // module instance
+nRF24L01P my_nrf24l01p(MOSI, MISO, SCK, CS, CE, IRQ); // module instance - FRDM KL25Z
+// nRF24L01P my_nrf24l01p(D11, D12, D4, D10, D9, D8); // module instance (Arduino pinout - compatible to other boards)
 
 /* Objeto Serial */
 static BufferedSerial pc(USBTX, USBRX, 9600); 
@@ -99,7 +114,7 @@ int main() {
             }
 
             // Toggle LED2 (to help debug nRF24L01+ -> Host communication)
-            // blue = !blue;
+            blue = !blue;
         }
 
     }
