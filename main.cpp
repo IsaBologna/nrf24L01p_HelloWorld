@@ -58,7 +58,7 @@ static BufferedSerial pc(USBTX, USBRX, 9600);
 
 int main() {
 
-    char txData[TRANSFER_SIZE], rxData[TRANSFER_SIZE];
+    char txData[TRANSFER_SIZE], rxData[TRANSFER_SIZE+1];
     int txDataCnt = 0;
     int rxDataCnt = 0;
 
@@ -107,10 +107,12 @@ int main() {
 
             // ...read the data into the receive buffer
             rxDataCnt = my_nrf24l01p.read( NRF24L01P_PIPE_P0, rxData, sizeof( rxData ) );
-
+            
+            rxData[TRANSFER_SIZE] = '\0'; // caracter de fim de string para o print com puts
+            
             // Display the receive buffer contents via the host serial link
             for ( int i = 0; rxDataCnt > 0; rxDataCnt--, i++ ) {
-                printf("%c",rxData[i]); // putc( rxData[i] );
+                (void)puts(rxData); // putc( rxData[i] );
             }
 
             // Toggle LED2 (to help debug nRF24L01+ -> Host communication)
