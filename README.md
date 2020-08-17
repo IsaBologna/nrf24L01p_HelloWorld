@@ -26,7 +26,7 @@ Com o firmware atualizado e os drivers instalados, o Mbed Studio deve identifica
 **master** para ser usada com a FRDM-KL25Z
 **nucleo-f411** pinagem compativel com qualquer placa da ST ou outras com pinagem Arduino
 
-# Documentação (on progress)
+# Documentação (in progress)
 https://isabologna.github.io/MS_frdm_kl25z/
 
 (obs: o link é um recorte temporário de outro lugar, então quebra as vezes)
