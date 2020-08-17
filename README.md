@@ -21,6 +21,11 @@ Para usar a frdm com o MS, o firmware precisa ser atualizado para o [DAPLink](op
 
 Com o firmware atualizado e os drivers instalados, o Mbed Studio deve identificar a placa automaticamente. E uma serial aparece no terminal (normlmente, na parte inferior da IDE).
 
+# Branches
+
+**master** para ser usada com a FRDM-KL25Z
+**nucleo-f411** pinagem compativel com qualquer placa da ST ou outras com pinagem Arduino
+
 # Documentação (on progress)
 https://isabologna.github.io/MS_frdm_kl25z/
 
