@@ -20,3 +20,8 @@ Escolhendo a devBoard em **target** a IDE identifica a pinagem, e assim não apo
 Para usar a frdm com o MS, o firmware precisa ser atualizado para o [DAPLink](open_sda_bin/k20dx_frdmkl25z_if_crc.bin) ao invés do [P&EMicro](open_sda_bin/MSD-DEBUG-FRDM-KL25Z_Pemicro_v118.SDA). 
 
 Com o firmware atualizado e os drivers instalados, o Mbed Studio deve identificar a placa automaticamente. E uma serial aparece no terminal (normlmente, na parte inferior da IDE).
+
+# Documentação (on progress)
+https://isabologna.github.io/MS_frdm_kl25z/
+
+(obs: o link é um recorte temporário de outro lugar, então quebra as vezes)
